@@ -1,0 +1,567 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+}
+#resimler {
+    background-image: url(yol2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 777px;
+}
+#container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#container ul {
+    list-style-type: none;
+    margin: 0;
+    margin-right: 80px;
+}
+header {
+    color: #ffffff;
+    padding: 10px 0;
+}
+#basliklar {
+    flex-grow: 1;
+}
+#marka {
+    color: chocolate;
+    font-size: 25px;
+    text-decoration: none;
+    margin-left: 80px;
+}
+#marka:hover {
+    color: rgb(255, 255, 255);
+    border: 2px solid;
+    border-color:  rgb(141, 175, 182);;
+    background-color: rgb(141, 175, 182);
+    border-radius: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.list {
+    list-style-type: none;
+    text-align: right;
+}
+.list li {
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 25px;
+}
+.list li:last-child {
+    margin-right: 0;
+}
+.list li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.list li a:hover {
+    border: 2px solid;
+    border-radius: 5px;
+    border-color:  rgb(141, 175, 182);
+    background-color: rgb(141, 175, 182);
+    border-width: 10px;
+}
+hr {
+    height: 1px;
+    margin-left: 80px;
+    margin-right: 60px;
+}
+#yazilar {
+    text-align: center;
+    margin-top: 150px;
+}
+#yazi {
+    font-size: 45px;
+}
+#learn {
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+#learn:hover {
+    background-color: rgb(157, 157, 157);
+}
+#resimler2 {
+    background-image: url(cami.jpg);
+    height: 777px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -20px;
+}
+#resimdag {
+    background-image: url(about.jpg);
+    height: 150px;
+    width: 250px;
+    background-position: left;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: center center; /* Arka plan resmini merkezde sabit tut */
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+}
+#birinciBölüm {   
+    font-size: 11px;
+    text-align: left;
+}
+#ikinciBölüm {   
+    font-size: 11px;
+    margin-left: 30px;
+    text-align: left;
+}
+#yazilar2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+#container3{
+    display: flex;
+}
+#ikinciSayfaBaslik {   
+    text-align: center;
+}
+#kizResmi {
+    background-image: url(şapkalıkiz.jpg);
+    height: 350px;
+    width: 250px;
+    background-size: 100%;
+    background-position: left;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-left: 25%;
+    margin-top: 180px;
+    background-repeat: no-repeat;
+    background-position: center center; /* Arka plan resmini merkezde sabit tut */
+    background-size: cover;
+    background-position: center;
+}
+#kizyazi {   
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 80px;
+    max-width: 300px; /* Metnin taşmaması için genişlik belirtiyoruz */
+    margin-top: 170px;
+}
+
+#read {
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #ffffff;
+    opacity: 0.5;
+    text-align: center;
+}
+#read:hover {
+    background-color: rgb(157, 157, 157);
+}
+#features{
+    background-image: url(cami.jpg);
+    height: 777px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#contact1{
+    background-image: url(cami.jpg);
+    height: 777px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#container4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#kizResmi2 {
+    background-image: url(güzelkiz.jpg);
+    height: 350px;
+    width: 250px;
+    background-size: 100%;
+    background-position: left;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-left: 80px;
+    margin-top: 180px;
+    background-repeat: no-repeat;
+    background-position: center center; /* Arka plan resmini merkezde sabit tut */
+    background-size: cover;
+    background-position: center;
+}
+#kizyazi2 {
+    
+    text-align: left;
+    max-width: 300px; /* Metnin taşmaması için genişlik belirtiyoruz */
+    margin-top: 170px;
+}
+video{
+    display: block;
+    unicode-bidi: isolate;
+    display: block;
+    unicode-bidi: isolate;
+}
+#kizResmi3 {
+    background-image: url(mük.jpg);
+    height: 350px;
+    width: 250px;
+    background-size: 100%;
+    background-position: left;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin-left: 25%;
+    margin-top: 180px;
+    background-repeat: no-repeat;
+    background-position: center center; /* Arka plan resmini merkezde sabit tut */
+    background-size: cover;
+    background-position: center;
+}
+#kizyazi3 {  
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 80px;
+    max-width: 300px; /* Metnin taşmaması için genişlik belirtiyoruz */
+    margin-top: 170px;
+}
+#oku {
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #ffffff;
+    opacity: 0.5;
+    text-align: center;
+}
+#oku:hover {
+    background-color: rgb(157, 157, 157);
+}
+#bitıkAşağı{
+    background-color: azure;
+    height: 770px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#container5{
+    display: flex;
+}
+#ikiKisi {
+    background-color: rgb(230, 234, 245);
+    height: 800px;
+    width: 100%;
+}
+#container6 {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+#ortaliBaslik {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+    font-size: 30px;
+}
+#clientComments {
+    display: flex;
+    justify-content: space-around; 
+    width: 80%; 
+    margin-top: 50px;
+}
+#solTaraf{
+    width: 470px;
+    height: 340px;
+    background-color: white;
+    text-align: left;
+    box-shadow: 1px 10px 10px 10px rgb(0, 0, 0, 0.5); 
+}
+#carlosResim{
+    margin-top: -20px;
+    width: 100px;
+    height: 90px;
+    border-radius: 100px;
+    margin-left: 200px;
+}
+#carlos{
+    text-align: center;
+}
+#p1,#p2,#p3,#p4{
+    margin-left: 60px;
+}
+#sagTaraf{
+    width: 470px;
+    height: 340px;
+    background-color: white;
+    text-align: left;
+    box-shadow: 1px 10px 10px 10px rgb(0, 0, 0, 0.5); 
+}
+#robertResim{
+    margin-top: -20px;
+    width: 100px;
+    height: 90px;
+    border-radius: 100px;
+    margin-left: 200px;
+}
+#robert{
+    text-align: center;
+}
+#p11,#p22,#p33,#p44{
+    margin-left: 60px;
+}
+#sagAlt{
+    display: flex;
+    margin-top: 20px;
+    text-align: center;
+}
+#follow{
+    margin-left: 200px;
+    margin-top: 50px;
+    font-size: 25px;
+    text-align: center;
+}
+#input1{
+    margin-top:50px ;
+    margin-left: 80px;   
+}
+#inputt{
+    border-color: #ffffff;
+    width: 250px;
+    height: 50px;
+}
+#inputtt{
+    background-color: orange;
+    color: #ffffff;
+    border-color: orange;
+    width: 120px;
+    height: 55px;
+}
+#son{
+    background-image: url(cami.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#container7{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#about,#process,#quickLinks,#contactİnfo{
+    flex-basis: 200px; /* Blok genişliği belirledik */
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px; /* Bloklar arasına boşluk ekledik */
+}
+#creativeDesign2{
+    margin-left: 200px;
+}
+#footerYazi{
+    font-size: 10px; 
+}
+
+@media screen and (max-width: 1230px) {
+    #container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #marka {
+        margin-left: 20px;
+    }
+    #container ul {
+        margin-right: 20px;
+    }
+    .list {
+        text-align: left;
+    }
+    #kizResmi,  #kizResmi3 {
+        width: 80%;
+        height: auto;
+        margin-left:10px ;
+    }
+    #kizyazi,#kizyazi3{
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+    #kizyazi2{
+        margin-left: 10px;
+    }
+    #kizResmi2{
+        margin-left: 0;
+        width: 80%;
+        margin-right: 10px;
+    }
+    #ikiKisi{
+        height: 1050px;
+    }
+    #clientComments {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #input1{
+        margin-top: 15px;
+
+    }
+    #inputt{
+        border-color: #ffffff;
+        width: 250px;
+        height: 40px;
+        text-align: center;
+        
+    }
+    #inputtt{
+        background-color: orange;
+        color: #ffffff;
+        border-color: orange;
+        width: 80px;
+        height: 45px;
+        justify-content: center;
+    }
+    #container7{
+        margin-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #follow{
+        font-size: 20px;
+        margin: 0;
+        margin-top: 10px;
+    }
+    #sagAlt{
+        flex-direction: column;
+        text-align: center;
+    }
+    #yazi4{
+        font-size: 25px;
+    }
+    #sagTaraf{
+        margin-top: 50px;
+    }
+    #creativeDesign2{
+        margin: 0;
+    }
+    #yazilar2{
+        margin-left:10px ;
+        margin-right:10px ;
+    }
+    #creativeDesign2{
+        padding-left: 20px;
+    }
+}
+@media screen and (max-width: 480px) {
+    #marka {
+        font-size: 28px;
+        margin-left: -20px;
+    }
+    
+    .list li{
+        margin: 0px;
+        margin-top: 10px;
+        margin-right: 10px;
+        display: inline-block;
+    }
+    #kizResmi, #kizResmi2, #kizResmi3 {
+        width: 100%;
+    }
+    #clientComments {
+        max-width: 80%;
+    }
+    #ikiKisi{
+        height: 1000px;
+    }
+    #yazi {
+        font-size: 30px;
+    }
+    #container7{
+        margin-top: 10px;
+    }
+    #follow{
+        font-size: 15px;
+        text-align: center;
+    }
+    #creativeDesign2{
+        padding-left: 20px;
+    }
+    #input1{
+        margin-top: 0;
+    }
+    #inputt{
+        margin-top: 10px;
+        border-color: #ffffff;
+        width: 180px;
+        height: 25px;
+        justify-content: center;
+        
+    }
+    #inputtt{
+        background-color: orange;
+        color: #ffffff;
+        border-color: orange;
+        width: 60px;
+        height: 30px;
+        justify-content: center;
+    }
+    #sagAlt{
+        flex-direction: column;
+    }
+    #creativeDesign2{
+       text-align: center;
+    }
+    #sagTaraf{
+        width: 100%;
+        font-size: 13px;
+    }
+    #solTaraf{
+        width: 100%;
+        font-size: 13px;
+    }
+    #sagTaraf{
+        margin-top: 50px;
+    }
+    #kizResmi, #kizResmi3 {
+        width: 80%;
+        height: auto;
+        margin-left:10px ;
+    }
+    #kizyazi,#kizyazi3{
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+    #kizyazi2{
+        margin-left: 10px;
+    }
+    #kizResmi2{
+        margin-left: 0;
+        width: 80%;
+        margin-right: 10px;
+    }
+    #yazilar2{
+        margin-left: 10px ;
+        margin-right: 10px ;
+    }
+    #p1,#p2,#p3,#p4,#p11,#p22,#p33,#p44{
+        margin: 25px;
+    } 
+    #resimler2{
+        height: 840px;
+    }
+    
+}
