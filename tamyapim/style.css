@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+    padding: 0px ;
+    margin: 0px;
+}
+
+/* menu ile ilgili kodlar */
+#menu {
+    padding: 20px 40px 20px 40px;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    background-color: rgb(117, 124, 124);
+    align-items: center;
+    
+}
+
+#menu #menu-list {
+    padding: 0px 50px 0 20px;
+    display: flex;
+    flex-grow: 1;
+    justify-content: right; /* Menü öğelerini sağa yaslar */
+    
+}
+
+#menu #menu-list ul {
+    display: flex;
+    gap: 20px; /* Menü öğeleri arasına boşluk ekler */
+    list-style: none;
+    
+}
+
+#menu #menu-list ul li {
+    display: flex;
+    align-items: center; /* Menü öğelerini dikey olarak ortalar */
+}
+
+#menu #menu-list ul li a {
+    text-decoration: none;
+    background-color: rgb(138, 138, 138);
+    padding: 10px 20px; /* Linklere biraz iç boşluk ekler */
+    color: white; /* Yazı rengini beyaz yapar */
+    border-radius: 5px; /* Kenarları yuvarlatır */
+    transition: background-color 0.3s ease; /* Arka plan renginin değişimi için geçiş efekti */
+    
+}
+
+#menu #menu-list ul li a:hover {
+    background-color: rgb(90, 90, 90); /* Üzerine gelindiğinde arka plan rengini değiştirir */
+}
+
+#sosyal {
+    display: flex;
+    justify-content: right; /* Sağa yaslamak için */
+    padding-top: 10px; /* Üstten biraz boşluk ekler */
+    
+}
+
+#sosyal #icon svg {
+    width: 24px;  /* Genişlik */
+    height: 24px; /* Yükseklik */
+    transition: transform 0.3s ease; /* Geçiş efekti ekler */
+    color:rgb(31, 1, 86);
+    margin-left: 10px;
+}
+
+#sosyal #icon svg:hover {
+    transform: scale(1.2); /* Üzerine gelindiğinde ikonları büyütür */
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
+.arkaPlan{
+    background-color: rgb(204, 204, 204);
+    height: 710px;
+  }
+ 
+  .container {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    
+  }
+  
+  #slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    
+  }
+  
+  .slide {
+    margin-top: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #prev,
+  #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  #prev {
+    left: 0;
+    margin-top: -10px;
+  }
+  
+  #next {
+    right: 0;
+    margin-top: -10px;
+  }
+  
+  .thumbnails-container {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .thumbnail {
+    width: 100px;
+    height: auto;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .thumbnail:hover {
+    opacity: 0.6;
+  }
+  .slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover; /* Resimlerin orantılı olarak sığdırılmasını sağlar */
+    border-radius: 5px;
+  }
+  #file-upload-button{
+    background-color: black;
+  }
+
+@media screen and (max-width: 960px) {
+    #menu #menu-list {
+        
+        position: static;
+        background-color: transparent;
+        padding: 20;
+    }
+}
