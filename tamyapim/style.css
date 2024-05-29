@@ -50,6 +50,9 @@ body {
 #menu #menu-list ul li a:hover {
     background-color: rgb(90, 90, 90); /* Üzerine gelindiğinde arka plan rengini değiştirir */
 }
+#cokluResim{
+    height: 650px;
+}
 /*Sosyal medya iconları ile ilgili kodlar*/
 #sosyal {
     display: flex;
@@ -177,8 +180,36 @@ footer {
 #alt-menu li a:hover{
     text-decoration: underline;
 }
-
-@media screen and (max-width: 950px) {
+#ikinciSayfa{
+    background-color: antiquewhite;
+    width: 100%;
+    height: 700px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#image-and-right{
+    
+    justify-content: center;
+    display: flex;
+}
+#image-medya{
+    width: 450px;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 100px;
+    
+}
+#why-yazi{
+    margin-left: 30px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    font-size: 45px;
+    margin-bottom: 40px;
+    margin-top: 100px;
+}
+p{
+    margin-left: 30px;
+}
+@media screen and (max-width: 955px) {
     * {
         padding: 0px;
         margin: 0;
@@ -214,6 +245,23 @@ footer {
         border-radius: 5px; /* Kenarları yuvarlatır */
         transition: background-color 0.3s ease; /* Arka plan renginin değişimi için geçiş efekti */       
     }    
+    #ikinciSayfa{
+        width: 100%;
+        height: 1100px;
+        
+    }
+    #image-medya{
+        width: 300px;
+        margin-top: 20px;
+        
+    }
+    #why-yazi{
+    margin-top: 0px;
+    }
+
+    p{
+        margin-top: 15px;
+    }
     footer {
         width: 100%;
         height: 340px;
@@ -225,13 +273,23 @@ footer {
     #iletisimeGecin {
         margin: 20px 50px 50px 20px;
     }
+    
+    #image-and-right{
+        display: block;
+        text-align: center
+    }
+    #yazilar{
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 665px) {
     #menu #menu-list ul li a {
         text-decoration: none;
         background-color: rgb(138, 138, 138);
         padding: 5px 10px; /* Linklere biraz iç boşluk ekler */
-        font-size: 15px;
+        font-size: 14px;
         color: white; /* Yazı rengini beyaz yapar */
         border-radius: 5px; /* Kenarları yuvarlatır */
         transition: background-color 0.3s ease; /* Arka plan renginin değişimi için geçiş efekti */       
@@ -244,9 +302,32 @@ footer {
         justify-content: space-around;
         gap: 5px;
     }
+    #image-medya{
+        width: 300px;
+        height: auto;
+        border-radius: 15px;
+    }
+    #why-yazi{
+        font-size: 29px;
+    }
+    p{
+        font-size: 13px;
+    }
+    #ikinciSayfa{
+        width: 100%;
+        height: 1110px;
+        
+    }
+    #yazilar{
+        padding:0;
+        
+    }
+    #image-medya{
+        margin-top: 50px;
+    }
     footer {
         width: 100%;
-        height: 340px;
+        height: 350px;
         background-color:rgb(117, 124, 124);
     }
     #capsayici {
@@ -283,5 +364,11 @@ footer {
     #sosyal {
         justify-content: center;
         margin-top: 5px;
+    }
+    h3{
+        font-size: 15px;
+    }
+    #alt-menu{
+        font-size: 14px;
     }
 }
