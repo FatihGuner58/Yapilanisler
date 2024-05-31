@@ -347,11 +347,13 @@ video{
 #input1{
     margin-top:50px ;
     margin-left: 80px;   
+    
 }
 #inputt{
     border-color: #ffffff;
     width: 250px;
-    height: 50px;
+    height: 45px;
+    font-size: 16px;
 }
 #inputtt{
     background-color: orange;
@@ -444,7 +446,7 @@ video{
     #inputt{
         border-color: #ffffff;
         width: 250px;
-        height: 40px;
+        height: 35px;
         text-align: center;
         
     }
@@ -538,7 +540,7 @@ video{
         margin-top: 10px;
         border-color: #ffffff;
         width: 180px;
-        height: 30px;
+        height: 25px;
         justify-content: center;
         
     }
@@ -597,6 +599,9 @@ video{
     } 
     #resimler2{
         height: 1150px;
+    }
+    #contactİnfo{
+        margin-left: 40px;
     }
     
 }
