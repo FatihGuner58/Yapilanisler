@@ -113,6 +113,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.book__card img{
+  height: 300px;
+}
 .col-5 {
   flex-basis: calc(33.333% - 10px); /* Yüzde 33.333 artı aralık genişliği */
   margin-bottom: 20px; /* İstenen boşluk */

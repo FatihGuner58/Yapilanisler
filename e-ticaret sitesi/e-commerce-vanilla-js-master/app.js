@@ -61,6 +61,7 @@ const getBooks = () => {
       createBookItemsHtml();
     });
 };
+getBooks();
 
 const createBookItemsHtml = () => {
   const bookListEl = document.querySelector(".book__list");
@@ -97,6 +98,42 @@ const createBookItemsHtml = () => {
   bookListEl.innerHTML = bookListHtml;
 };
 
-// Başlangıçta kitapları getirmek için getBooks fonksiyonunu çağır
-getBooks();
-createBookItemsHtml();
+
+const BOOK_TYPES = {
+  ALL : "Tümü",
+  NOVEL : "Roman",
+  CHILDREN : "Çocuk",
+  SELFIMPROVEMENT : "Kişisel Gelişim",
+  HISTORY : "Tarih" ,
+  FINANCE : "Finans",
+  SCIENCE : "Bilim",
+};
+const createBookTypeHtml = () => {
+  const filterEl = document.querySelector(".filter");
+  let filterHtml = "";
+  let filterTypes = ["ALL"];
+  bookList.forEach(book => {
+    if (filterTypes.findIndex((filter) => filter == book.type) == -1)
+      filterTypes.push(book.type);
+  });
+
+  filterTypes.forEach((type, index) => {
+    filterHtml += `<li class="${index == 0 ? "active" : null}"onclick="filterBooks(this)" data-type="${type}">${BOOK_TYPES[type] || type}</li>`;
+  });
+
+  filterEl.innerHTML = filterHtml;
+};
+ const filterBooks = (filterEl) => {
+  document.querySelector(".filter .active").classList.remove("active");
+  filterEl.classList.add("active");
+  let bookType = filterEl.dataset.type;
+  getBooks();
+  if (bookType !="ALL")
+    bookList = bookList.filter((book) => book.type == bookType);
+  createBookItemsHtml();
+ };
+ 
+setTimeout(() => {
+  createBookItemsHtml();
+  createBookTypeHtml();
+}, 100);
