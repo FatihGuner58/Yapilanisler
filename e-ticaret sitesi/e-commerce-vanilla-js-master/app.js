@@ -1,4 +1,4 @@
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
   const thumbnails = document.querySelectorAll('.thumbnails img');
   const carousel = new bootstrap.Carousel(document.querySelector('#carouselBookSlider')); // Carousel nesnesi oluşturuldu
 
@@ -39,7 +39,9 @@ window.onclick = function(event) {
   }
 };
 
-let bookList = [];
+let bookList = [], 
+basketList = [];
+let filteredBookList = [];
 
 const generateStarRating = (starRate) => {
   let starRateHtml = "";
@@ -54,20 +56,21 @@ const generateStarRating = (starRate) => {
 };
 
 const getBooks = () => {
-  fetch("./products.json")
+  return fetch("./products.json")
     .then((res) => res.json())
     .then((books) => {
       bookList = books;
+      filteredBookList = books; // Filtrelenmiş listeyi de güncelle
       createBookItemsHtml();
+      createBookTypeHtml();
     });
 };
-getBooks();
 
 const createBookItemsHtml = () => {
   const bookListEl = document.querySelector(".book__list");
   let bookListHtml = "";
 
-  bookList.forEach((book) => {
+  filteredBookList.forEach((book) => {
     bookListHtml += `
       <div class="col-5 mb-5">
         <div class="row book__card">
@@ -89,7 +92,7 @@ const createBookItemsHtml = () => {
               <span class="black fw-bold fs-5">${book.price}₺</span>
               ${book.oldPrice ? `<span class="gray fs-5 text-decoration-line-through">${book.oldPrice}₺</span>` : ""}
               </div>
-            <button class="btn__purple">Sepete Ekle</button>
+            <button class="btn__purple" onclick="addBookToBasket(${book.id})">Sepete Ekle</button>
           </div>
         </div>
       </div>`;
@@ -98,16 +101,16 @@ const createBookItemsHtml = () => {
   bookListEl.innerHTML = bookListHtml;
 };
 
-
 const BOOK_TYPES = {
-  ALL : "Tümü",
-  NOVEL : "Roman",
-  CHILDREN : "Çocuk",
-  SELFIMPROVEMENT : "Kişisel Gelişim",
-  HISTORY : "Tarih" ,
-  FINANCE : "Finans",
-  SCIENCE : "Bilim",
+  ALL: "Tümü",
+  NOVEL: "Roman",
+  CHILDREN: "Çocuk",
+  SELFIMPROVEMENT: "Kişisel Gelişim",
+  HISTORY: "Tarih",
+  FINANCE: "Finans",
+  SCIENCE: "Bilim",
 };
+
 const createBookTypeHtml = () => {
   const filterEl = document.querySelector(".filter");
   let filterHtml = "";
@@ -118,22 +121,90 @@ const createBookTypeHtml = () => {
   });
 
   filterTypes.forEach((type, index) => {
-    filterHtml += `<li class="${index == 0 ? "active" : null}"onclick="filterBooks(this)" data-type="${type}">${BOOK_TYPES[type] || type}</li>`;
+    filterHtml += `<li class="${index == 0 ? "active" : ""}" onclick="filterBooks(this)" data-type="${type}">${BOOK_TYPES[type] || type}</li>`;
   });
 
   filterEl.innerHTML = filterHtml;
 };
- const filterBooks = (filterEl) => {
+
+const filterBooks = (filterEl) => {
   document.querySelector(".filter .active").classList.remove("active");
   filterEl.classList.add("active");
   let bookType = filterEl.dataset.type;
-  getBooks();
-  if (bookType !="ALL")
-    bookList = bookList.filter((book) => book.type == bookType);
+  
+  if (bookType === "ALL") {
+    filteredBookList = bookList; // Tüm kitapları göster
+  } else {
+    filteredBookList = bookList.filter((book) => book.type == bookType);
+  }
   createBookItemsHtml();
- };
- 
-setTimeout(() => {
-  createBookItemsHtml();
-  createBookTypeHtml();
-}, 100);
+};
+
+const listBasketItems = () => {
+  const basketListEl = document.querySelector(".basket__list");
+  const basketCountEl = document.querySelector(".basket__count");
+  basketCountEl.innerHTML = basketList.length > 0 ? basketList.length : null;
+  
+  const totalPriceEl = document.querySelector(".total__price"); // Düzeltme burada
+
+  let basketListHtml = "";
+  let totalPrice = 0;
+  basketList.forEach(item => {
+    totalPrice += item.product.price * item.quantity;
+    basketListHtml += `
+      <li class="basket__item">
+        <img src="${item.product.imgSource}" width="100" height="100">
+        <div class="basket__item_info">
+          <h3 class="book_name">${item.product.name}</h3>
+          <span class="book_price">${item.product.price}₺</span><br>
+          <span class="book__remove" onclick="removeItemToBasket(${item.product.id})">remove</span>
+        </div>
+        <div class="book__count">
+          <span class="decrease" onclick="decreaseQuantity(${item.product.id})">-</span>
+          <span class="my-5">${item.quantity}</span>
+          <span class="increase" onclick="increaseQuantity(${item.product.id})">+</span>
+        </div>
+      </li>`;
+  });
+  basketListEl.innerHTML = basketListHtml;
+  totalPriceEl.innerHTML = totalPrice > 0 ? "Total: " + totalPrice.toFixed(2) + "₺" : null;
+};
+
+const addBookToBasket = (bookId) => {
+  let findedBook = bookList.find(book => book.id == bookId);
+  if (findedBook) {
+    const basketAlreadyIndex = basketList.findIndex(basket => basket.product.id == bookId);
+    if (basketAlreadyIndex == -1) {
+      let addedItem = { quantity: 1, product: findedBook };
+      basketList.push(addedItem);
+    } else {
+      basketList[basketAlreadyIndex].quantity += 1;
+    }
+    listBasketItems();
+  }
+};
+
+const removeItemToBasket = (bookId) => {
+  basketList = basketList.filter(item => item.product.id != bookId);
+  listBasketItems();
+};
+
+const decreaseQuantity = (bookId) => {
+  const basketItem = basketList.find(item => item.product.id == bookId);
+  if (basketItem && basketItem.quantity > 1) {
+    basketItem.quantity -= 1;
+  } else {
+    basketList = basketList.filter(item => item.product.id != bookId);
+  }
+  listBasketItems();
+};
+
+const increaseQuantity = (bookId) => {
+  const basketItem = basketList.find(item => item.product.id == bookId);
+  if (basketItem) {
+    basketItem.quantity += 1;
+  }
+  listBasketItems();
+};
+
+getBooks();

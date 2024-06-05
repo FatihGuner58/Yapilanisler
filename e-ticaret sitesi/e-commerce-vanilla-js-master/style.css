@@ -59,6 +59,9 @@
   font-size: 1rem;
   font-weight: bold;
 }
+.basket__count:empty{
+  display: none;
+}
 .slider{
   width:80%;
   margin-left: auto;
@@ -246,6 +249,7 @@
   margin-top: 3rem ;
   max-height: 400px;
   overflow-y: auto;
+  
 }
 .basket__item {
   display: flex;
@@ -255,20 +259,28 @@
 }
 .basket__istem_info{
   width: 250px;
+  
 }
 .basket__istem_info .book_name{
   font-size: 16px;
   font-weight: bold;
-
+  
 }
 .basket__istem_info .book_price{
   font-size: 16px;
+  display: flex;
+
+}
+.basket__write{
+  font-size: 22px;
+  
 }
 .basket__istem_info .book_remove{
   cursor: pointer;
   color: var(--gray);
 }
 .basket__item .book__count{
+  
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--black);
@@ -276,7 +288,6 @@
 .book__count .increase , .decrease {
   color: var(--purple);
   cursor: pointer;
-
 }
 .book__count .increase {
   margin-right: 5px;
