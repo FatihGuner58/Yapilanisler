@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f5;
+    color: #333;
+}
+
+#app {
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#app:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+#map {
+    height: 500px;
+    border-bottom: 2px solid #4CAF50;
+}
+
+#info {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+    border-bottom: 2px solid #3e8e41;
+    font-size: 2em;
+}
+
+h2 {
+    color: #4CAF50;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #666;
+}
+
+#stationName {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+}
+
+#waitTime {
+    color: #e74c3c;
+    font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+    #app {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    #map {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    #map {
+        height: 200px;
+    }
+}
